@@ -1,0 +1,62 @@
+def add(a, b):
+    return a + b
+
+def subtract(a, b):
+    return a - b
+
+def multiply(a, b):
+    return a * b
+
+def divide(a, b):
+    if b == 0:
+        return "Error! Division by zero."
+    return a / b
+
+def km_to_miles(km):
+    return km * 0.621371
+
+def celsius_to_fahrenheit(c):
+    return (c * 9/5) + 32
+
+def main():
+    while True:
+        print("\n=== Interactive Calculator & Unit Converter ===")
+        print("1. Basic Arithmetic (+, -, *, /)")
+        print("2. Convert KM to Miles")
+        print("3. Convert Celsius to Fahrenheit")
+        print("4. Exit")
+        
+        choice = input("Choose an option (1-4): ")
+        
+        if choice == '1':
+            op = input("Choose operation (+, -, *, /): ")
+            num1 = float(input("Enter first number: "))
+            num2 = float(input("Enter second number: "))
+            
+            if op == '+':
+                print("Result:", add(num1, num2))
+            elif op == '-':
+                print("Result:", subtract(num1, num2))
+            elif op == '*':
+                print("Result:", multiply(num1, num2))
+            elif op == '/':
+                print("Result:", divide(num1, num2))
+            else:
+                print("Invalid operation!")
+                
+        elif choice == '2':
+            km = float(input("Enter distance in kilometers: "))
+            print(f"{km} km is equal to {km_to_miles(km):.2f} miles")
+            
+        elif choice == '3':
+            c = float(input("Enter temperature in Celsius: "))
+            print(f"{c}°C is equal to {celsius_to_fahrenheit(c):.2f}°F")
+            
+        elif choice == '4':
+            print("Exiting program. Goodbye!")
+            break
+        else:
+            print("Invalid choice. Please enter a number between 1 and 4.")
+
+if __name__ == "__main__":
+    main()
